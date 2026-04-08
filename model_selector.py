@@ -9,6 +9,7 @@ import re
 from google import genai
 
 RATE_LIMITS = {
+    "gemini-3.1-flash-preview":       {"rpm": 60, "tpm": 1_000_000, "tool_use": True},
     "gemini-2.0-flash-lite":          {"rpm": 30, "tpm": 1_000_000, "tool_use": True},
     "gemini-2.0-flash":               {"rpm": 15, "tpm": 1_000_000, "tool_use": True},
     "gemini-1.5-flash":               {"rpm": 15, "tpm": 1_000_000, "tool_use": True},
@@ -19,7 +20,7 @@ RATE_LIMITS = {
     "gemini-1.5-pro":                 {"rpm":  2, "tpm":    32_000, "tool_use": True},
 }
 
-FALLBACK_ORDER = ["gemini-1.5-flash", "gemini-1.5-flash-8b", "gemini-2.0-flash"]
+FALLBACK_ORDER = ["gemini-3.1-flash-preview","gemini-1.5-flash", "gemini-1.5-flash-8b", "gemini-2.0-flash"]
 
 
 def get_ranked_models(verbose: bool = True) -> list[str]:
