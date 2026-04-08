@@ -1,0 +1,20 @@
+# Secrets — never commit these
+.env
+credentials.json
+token.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+myenv/
+*.egg-info/
+
+# Assignment PDFs — not needed in repo
+*.pdf
+
+# IDE
+.vscode/
+.idea/
